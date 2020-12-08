@@ -80,14 +80,21 @@ function clearAll(){
     clearInput();
 }
 
+
 //history
+let sizeStory = 0;
+
 function story(result) {
-    
- 
-    history.innerHTML=result
-    
+    const list = document.createElement("li");
+    sizeStory++;
+    if(sizeStory<16){
+        list.textContent = result;
+        history.appendChild(list)
+        console.log(list.textContent, sizeStory)
+    }
 }
 
 function historyClear() {
-    history.innerHTML=""
+    sizeStory=0;
+    history.innerHTML="";
 }
