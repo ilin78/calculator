@@ -13,6 +13,7 @@
 <body>
     <div class="wrapper">
         <div class="content">
+            
             <div class="header">
                 <input id="input" type="number" onchange="inputFunc()"></input>
             </div>
@@ -44,12 +45,18 @@
   
             </div>
 
-            <div>
-                <div class="result" id="result"></div>
-            </div>
-            
 
             
+            
+        </div>            
+        
+        <div>
+            <div class="history">
+                <div class="history__text" id="history">
+
+                </div>
+                <button class="history__clear" onclick="historyClear()"></button>
+            </div>
         </div>
     </div>
     

@@ -2,14 +2,14 @@ body {
 }
 
 .wrapper {
-    display: grid;
+    display: flex;
     justify-content: center;
     align-items: center;
     padding: 100px;
     
 }
 
-.content {
+.content, .history {
     display: grid;
     grid-template-columns: 300px; 
     grid-template-rows: 100px 1fr;
@@ -50,6 +50,27 @@ body {
     margin: 0 20px 0;
     grid-area: "numeral";
     width: 200px;
+}
+
+.history {
+    display: flex;
+    background-color: rgb(255, 225, 180);
+}
+.history__text{
+    padding: 20px;
+    width: 250px;
+    font-size: 20px;
+    color: rgb(71, 71, 71);
+}
+
+.history__clear {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgba(255, 0, 0, 0.527);
+    color: rgb(199, 0, 0);
 }
 
 /* UI */

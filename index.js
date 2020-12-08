@@ -8,6 +8,9 @@ const min = document.getElementById("min").value;
 const mult = document.getElementById("mult").value;
 const split = document.getElementById("split").value;
 
+const history = document.getElementById("history")
+
+
 // Array number
 function numberAdd(numbers) {
     arrNum.push(numbers);
@@ -69,6 +72,7 @@ function enter() {
     const result = eval(out.concat(input.value));
     clearInput();
     Input(result);
+    story(result) 
 }
 
 function clearAll(){
@@ -76,7 +80,14 @@ function clearAll(){
     clearInput();
 }
 
+//history
+function story(result) {
+    
+ 
+    history.innerHTML=result
+    
+}
 
-
-
-
+function historyClear() {
+    history.innerHTML=""
+}
