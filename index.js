@@ -1,14 +1,14 @@
 // INPUT
 const arrNum = [];
 // MATH
-var out;
+let out;
 // ACT
 const plus = document.getElementById("plus").value;
 const min = document.getElementById("min").value;
 const mult = document.getElementById("mult").value;
 const split = document.getElementById("split").value;
 
-const history = document.getElementById("history")
+const history = document.getElementById("history");
 
 
 // Array number
@@ -21,7 +21,7 @@ function numberAdd(numbers) {
 class Menu {
     constructor(elem) {
         this._elem = elem;
-        elem.onclick = this.onClick.bind(this );
+        elem.onclick = this.onClick.bind(this);
     }
 
     num_1() { numberAdd(1); }
@@ -65,14 +65,16 @@ function splitFunc(){ Active(split);}
 
 function Active(act) {
     out = input.value + act;
+    var act = act;
     clearAll();
 }
 
 function enter() {
+    const nextNumber = String(input.value);
     const result = eval(out.concat(input.value));
     clearInput();
     Input(result);
-    story(result) 
+    story(result, nextNumber);
 }
 
 function clearAll(){
@@ -84,13 +86,13 @@ function clearAll(){
 //history
 let sizeStory = 0;
 
-function story(result) {
+function story(result, nextNumber) {
     const list = document.createElement("li");
     sizeStory++;
-    if(sizeStory<16){
-        list.textContent = result;
-        history.appendChild(list)
-        console.log(list.textContent, sizeStory)
+    const strInList = String(out)+ nextNumber+'='+String(result);
+    if(sizeStory<17){
+        list.textContent =strInList;
+        history.appendChild(list);
     }
 }
 

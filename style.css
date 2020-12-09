@@ -1,4 +1,5 @@
 body {  
+    list-style: none;
 }
 
 .wrapper {
@@ -43,7 +44,6 @@ body {
 .act {
     margin: 0 20px 0;
     grid-area: "act";
-
 }
 
 .numeral {
