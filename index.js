@@ -90,29 +90,7 @@ function clearAll(){
 let sizeStory = 0;
 
 const li = function (list) {
-/*   
-    let selectorLI=document.querySelector("li");
-    console.log("test",selectorLI)
-    list.removeChild(selectorLI)
-    // li 
-
-    // for (let i=0; i<selectorLI[i].length; i++) {
-    //     list.removeChild(selectorLI[i])
-    //     console.log("test" )
-    // }
-*/
-
-
     var selectorLI = document.querySelector("ul").children;
-    // for (var i=0, child; child=selectorLI[i]; i++) {
-    //      //elementChildrens - коллеция детей списка
-    //      //child - последовательно, каждый из элементов elementChildrens
-        
-    //     console.log(child.innerHTML);
-        
-    //     //  list.removeChild(selectorLI[0])
-        
-    // }
  
     history.removeChild(selectorLI[0])
  
