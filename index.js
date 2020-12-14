@@ -1,5 +1,7 @@
 // INPUT
 const arrNum = [];
+// List resuls
+const expression = [];
 // MATH
 let out;
 // ACT
@@ -9,7 +11,7 @@ const mult = document.getElementById("mult").value;
 const split = document.getElementById("split").value;
 
 const history = document.getElementById("history");
-
+ 
 
 // Array number
 function numberAdd(numbers) {
@@ -46,8 +48,8 @@ class Menu {
 new Menu(menu);
 
 function clearInput() { input.value=''; }
-function clearNumbersArray() {
-    while (arrNum.length) { arrNum.pop(); }
+function clearNumbersArray(clearArray) {
+    while (clearArray.length) { clearArray.pop(); }
 }
 
 function Input(results) {
@@ -70,7 +72,7 @@ function Active(act) {
 }
 
 function enter() {
-    const nextNumber = String(input.value);
+    const nextNumber = input.value;
     const result = eval(out.concat(input.value));
     clearInput();
     Input(result);
@@ -78,25 +80,47 @@ function enter() {
 }
 
 function clearAll(){
-    clearNumbersArray();
+    clearNumbersArray(arrNum);
     clearInput();
 }
 
 
 //history
+
 let sizeStory = 0;
 
+const li = function (list) {
+    var selectorLI = document.querySelector("ul").children;
+ 
+    history.removeChild(selectorLI[0])
+ 
+}
+
 function story(result, nextNumber) {
+      
     const list = document.createElement("li");
+    
     sizeStory++;
-    const strInList = String(out)+ nextNumber+'='+String(result);
-    if(sizeStory<17){
-        list.textContent =strInList;
+
+    nextNumber = String(nextNumber);
+    out = String(out);
+    result = String(result);
+
+    expression.push(out+nextNumber+'='+result);
+
+    for (let i=0; i<expression.length; i++){
+        list.textContent =expression[i];
         history.appendChild(list);
+    }
+    
+    if (expression.length>15){ //16
+        li(list)    
     }
 }
 
 function historyClear() {
     sizeStory=0;
     history.innerHTML="";
+    clearNumbersArray(expression);
 }
+
