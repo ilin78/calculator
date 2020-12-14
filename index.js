@@ -104,14 +104,18 @@ const li = function (list) {
 
 
     var selectorLI = document.querySelector("ul").children;
-    for (var i=0, child; child=selectorLI[i]; i++) {
-         //elementChildrens - коллеция детей списка
-         //child - последовательно, каждый из элементов elementChildrens
-         console.log(child.innerHTML);
-        //  list.removeChild(selectorLI[0])
-    }
+    // for (var i=0, child; child=selectorLI[i]; i++) {
+    //      //elementChildrens - коллеция детей списка
+    //      //child - последовательно, каждый из элементов elementChildrens
+        
+    //     console.log(child.innerHTML);
+        
+    //     //  list.removeChild(selectorLI[0])
+        
+    // }
  
-    
+    history.removeChild(selectorLI[0])
+ 
 }
 
 function story(result, nextNumber) {
@@ -131,8 +135,8 @@ function story(result, nextNumber) {
         history.appendChild(list);
     }
     
-    if (expression.length>3){ //16
-        li(list)           
+    if (expression.length>15){ //16
+        li(list)    
     }
 }
 

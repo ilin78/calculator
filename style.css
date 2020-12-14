@@ -54,6 +54,7 @@ body, ul {
 
 .history {
     display: flex;
+    width: 600px;
     background-color: rgb(255, 225, 180);
 }
 .history__text{
