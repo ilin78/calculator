@@ -1,3 +1,4 @@
+"use strict"
 // INPUT
 const arrNum = [];
 // List resuls
@@ -86,21 +87,14 @@ function clearAll(){
 
 
 //history
-
-let sizeStory = 0;
-
-const li = function (list) {
+const li = function () {
     var selectorLI = document.querySelector("ul").children;
- 
     history.removeChild(selectorLI[0])
- 
 }
 
 function story(result, nextNumber) {
       
     const list = document.createElement("li");
-    
-    sizeStory++;
 
     nextNumber = String(nextNumber);
     out = String(out);
@@ -113,13 +107,12 @@ function story(result, nextNumber) {
         history.appendChild(list);
     }
     
-    if (expression.length>15){ //16
-        li(list)    
+    if (expression.length>15){
+        li()    
     }
 }
 
 function historyClear() {
-    sizeStory=0;
     history.innerHTML="";
     clearNumbersArray(expression);
 }

@@ -12,51 +12,47 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="content">
-            
-            <div class="header">
-                <input id="input" type="number" onchange="inputFunc()"></input>
-            </div>
-
-            <div class="buttons">
-                <div class="specific">
-                    <button id="clear" value = "c" onclick="clearAll()">AC</button>
-                </div>
-                <div class="act">
-                    <button id="split" value = "/" onclick="splitFunc()">/</button>
-                    <button id="mult" value = "*" onclick="multFunc()">х</button>
-                    <button id="min" value = "-" onclick="minFunc()">-</button>
-                    <button id="plus" value = "+" onclick="plusFunc()">+</button>
-                    <button id="enter" onclick="enter()">=</button>
+        <main class="main">
+            <div class="calculator">
+                <div class="calculator__input">
+                    <input id="input" type="number" onchange="inputFunc()"></input>
                 </div>
 
-                <div id="menu" class="numeral">
-                    <button data-action="num_7" value="7">7</button>
-                    <button data-action="num_8" value="8">8</button>
-                    <button data-action="num_9" value="9">9</button>
-                    <button data-action="num_4" value="4">4</button>
-                    <button data-action="num_5" value="5">5</button>
-                    <button data-action="num_6" value="6">6</button>
-                    <button data-action="num_1" value="1">1</button>
-                    <button data-action="num_2" value="2">2</button>
-                    <button data-action="num_3" value="3">3</button>
-                    <button data-action="num_0" value="0">0</button>  
+                <div class="calculator__buttons">
+                    <div class="calculator__specific">
+                        <button id="clear" value = "c" onclick="clearAll()">AC</button>
+                    </div>
+                    <div class="calculator__act">
+                        <button id="split" value = "/" onclick="splitFunc()">/</button>
+                        <button id="mult" value = "*" onclick="multFunc()">х</button>
+                        <button id="min" value = "-" onclick="minFunc()">-</button>
+                        <button id="plus" value = "+" onclick="plusFunc()">+</button>
+                        <button id="enter" onclick="enter()">=</button>
+                    </div>
+
+                    <div id="menu" class="calculator__numeral">
+                        <button data-action="num_7" value="7">7</button>
+                        <button data-action="num_8" value="8">8</button>
+                        <button data-action="num_9" value="9">9</button>
+                        <button data-action="num_4" value="4">4</button>
+                        <button data-action="num_5" value="5">5</button>
+                        <button data-action="num_6" value="6">6</button>
+                        <button data-action="num_1" value="1">1</button>
+                        <button data-action="num_2" value="2">2</button>
+                        <button data-action="num_3" value="3">3</button>
+                        <button data-action="num_0" value="0">0</button>  
+                    </div>
                 </div>
-  
-            </div>
-
-
-            
-            
-        </div>            
+            </div>            
         
-        <div>
-            <div class="history">
-                <ul  id="history" class="history__text"></ul>
-                <button class="history__clear"
-                 onclick="historyClear()"></button>
+            <div>
+                <div class="history">
+                    <ul  id="history" class="history__list"></ul>
+                    <button class="history__clear"
+                    onclick="historyClear()"></button>
+                </div>
             </div>
-        </div>
+        </main>
     </div>
     
     <script src="./index.js"></script>

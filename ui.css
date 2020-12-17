@@ -1,0 +1,54 @@
+body, ul {  
+    list-style: none;
+}
+
+/* UI */
+button {
+    cursor: pointer;
+    margin: 5px;
+    width: 45px;
+    height: 45px;
+    font-size: 30px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    /* box-shadow:0px 0px 2px 1px  rgb(255, 255, 255);  */
+    transition: ease-in-out 100ms;
+    color: #fff;
+    background-color: rgb(80, 80, 80);
+    /*  box-shadow: +Слева +Снизу Рассеивание Вокруг*/
+}
+
+button:active {
+    background-color: rgb(0, 0, 0);
+    box-shadow:0px 0px 0px 0px  #aaa; 
+}
+
+input {
+    margin: 0 30px 0;
+    height: 40px;
+    font-weight: 100;
+    font-size: 30px;
+    /* color: rgb(0, 250, 21); */
+    color: #fff;
+    background-color: rgb(41, 41, 41);
+    font-family: 'Orbitron', sans-serif;
+    border-radius: 2px;
+    width: 230px;
+}
+
+
+#plus, 
+#min, 
+#mult, 
+#split, 
+#enter {
+    background-color: rgb(255, 161, 20);
+    color: #fff;
+}
+
+#clear {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgb(161, 161, 161);
+    color: #000;
+}
