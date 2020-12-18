@@ -1,4 +1,5 @@
 "use strict"
+ 
 // INPUT
 const arrNum = [];
 // List resuls
