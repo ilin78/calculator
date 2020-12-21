@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <link rel="stylesheet" type="text/css" href="css/style_l.css" media="screen and (orientation: landscape)">
+    <link rel="stylesheet" type="text/css" href="css/style_p.css" media="screen and (orientation: portrait)">
 
 
- 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@498&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
 
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=false;" />
-    
+
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" />
 
     <meta name="viewport" content="width=device-width, user-scalable=no" />
@@ -23,10 +25,11 @@
 minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link rel="stylesheet" href="style.css">
-    <script type = "text/javascript" src="http://hammerjs.github.io/dist/hammer.min.js"> </script>
+    <script type="text/javascript" src="http://hammerjs.github.io/dist/hammer.min.js"> </script>
     <title>Document</title>
-    
+
 </head>
+
 <body>
     <div class="wrapper">
         <div class="container ">
@@ -35,16 +38,16 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
                     <div class="calculator__input">
                         <input id="input" type="number" onchange="inputFunc()"></input>
                     </div>
-                    
+
                     <div class="calculator__buttons">
                         <div class="calculator__specific">
-                            <button id="clear" value = "c" onclick="clearAll()">AC</button>
+                            <button id="clear" value="c" onclick="clearAll()">AC</button>
                         </div>
                         <div class="calculator__act">
-                            <button id="split" value = "/" onclick="splitFunc()">/</button>
-                            <button id="mult" value = "*" onclick="multFunc()">х</button>
-                            <button id="min" value = "-" onclick="minFunc()">-</button>
-                            <button id="plus" value = "+" onclick="plusFunc()">+</button>
+                            <button id="split" value="/" onclick="splitFunc()">/</button>
+                            <button id="mult" value="*" onclick="multFunc()">х</button>
+                            <button id="min" value="-" onclick="minFunc()">-</button>
+                            <button id="plus" value="+" onclick="plusFunc()">+</button>
                             <button id="enter" onclick="enter()">=</button>
                         </div>
 
@@ -58,11 +61,11 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
                             <button data-action="num_1" value="1">1</button>
                             <button data-action="num_2" value="2">2</button>
                             <button data-action="num_3" value="3">3</button>
-                            <button id="zero" data-action="num_0" value="0">0</button>  
+                            <button id="zero" data-action="num_0" value="0">0</button>
                         </div>
                     </div>
-                </div>            
-            
+                </div>
+
                 <!-- <div>
                     <div class="history">
                         <ul  id="history" class="history__list"></ul>
@@ -73,30 +76,8 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
             </main>
         </div>
     </div>
-    <script>
-        document.addEventListener('gesturestart', function (e) {
-    e.preventDefault();
-});
-document.addEventListener('touchmove', function(event) {
-    event = event.originalEvent || event;
-    if(event.scale > 1) {
-      event.preventDefault();
-    }
-  }, false);
-  if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-  window.document.addEventListener('touchmove', e => {
-    if(e.scale !== 1) {
-      e.preventDefault();
-    }
-  }, {passive: false});
-}
-document.addEventListener('touchmove', function(event) {
-        event = event.originalEvent || event;
-        if (event.scale !== 1) {
-           event.preventDefault();
-        }
-    }, false);
-    </script>
+    <script src="./dont_touchmove.js.js"></script>
     <script src="./index.js"></script>
 </body>
+
 </html>

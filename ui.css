@@ -1,48 +1,50 @@
-body, ul {  
-    list-style: none;
+
+
+
+body,
+ul {
+  list-style: none;
 }
 
 /* UI */
 button {
-    cursor: pointer;
-  
-    width: 45px;
-    height: 45px;
-    font-size: 30px;
-    /* border: 1px solid #aaa; */
-    /* border-radius: 5px; */
-    /* box-shadow:0px 0px 2px 1px  rgb(255, 255, 255);  */
-    transition: ease-in-out 100ms;
-    color: #fff;
-    background-color: rgb(54, 54, 54);
-    /*  box-shadow: +Слева +Снизу Рассеивание Вокруг*/
+  cursor: pointer;
+
+  width: 45px;
+  height: 45px;
+  font-size: 30px;
+  /* border: 1px solid #aaa; */
+  /* border-radius: 5px; */
+  /* box-shadow:0px 0px 2px 1px  rgb(255, 255, 255);  */
+  transition: ease-in-out 100ms;
+  color: #fff;
+  background-color: rgb(54, 54, 54);
+  /*  box-shadow: +Слева +Снизу Рассеивание Вокруг*/
 }
 
 button:active {
-    background-color: rgba(206, 206, 206, 0.247);
-    box-shadow:0px 0px 0px 0px  #aaa; 
+  background-color: rgba(206, 206, 206, 0.247);
+  box-shadow: 0px 0px 0px 0px #aaa;
 }
 
-
-
-
-#plus, 
-#min, 
-#mult, 
-#split, 
+#plus,
+#min,
+#mult,
+#split,
 #enter {
-    background-color: rgb(255, 161, 20);
-    color: #fff;
+  background-color: rgb(255, 161, 20);
+  color: #fff;
 }
 
 #clear {
-    font-size: 20px;
-    font-weight: bold;
-    background-color: rgb(161, 161, 161);
-    color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: rgb(161, 161, 161);
+  color: #000;
 }
 #zero {
-    width: 175px;
-    text-align: left;
-    padding-left:32px;
+  width: 175px;
+  text-align: left;
+  padding-left: 32px;
 }
+#block_land{position:absolute; top:0; left:0; text-align:center; background:white; width:100%; height:100%; display:none;}
