@@ -9,20 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@498&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
-
+    
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=false;" />
-
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" />
-
-    <meta name="viewport" content="width=device-width, user-scalable=no" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, 
-minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="http://hammerjs.github.io/dist/hammer.min.js"> </script>
@@ -42,6 +31,8 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
                     <div class="calculator__buttons">
                         <div class="calculator__specific">
                             <button id="clear" value="c" onclick="clearAll()">AC</button>
+                            <button id="split_plus" value="-" onclick="split_plus()">+/-</button>
+                            <button id="percent" value="%" onclick="percent()">%</button>
                         </div>
                         <div class="calculator__act">
                             <button id="split" value="/" onclick="splitFunc()">/</button>
@@ -50,7 +41,6 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
                             <button id="plus" value="+" onclick="plusFunc()">+</button>
                             <button id="enter" onclick="enter()">=</button>
                         </div>
-
                         <div id="menu" class="calculator__numeral">
                             <button data-action="num_7" value="7">7</button>
                             <button data-action="num_8" value="8">8</button>
@@ -62,6 +52,7 @@ minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
                             <button data-action="num_2" value="2">2</button>
                             <button data-action="num_3" value="3">3</button>
                             <button id="zero" data-action="num_0" value="0">0</button>
+                            <button data-action="num_point" value=",">,</button>
                         </div>
                     </div>
                 </div>

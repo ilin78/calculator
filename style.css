@@ -150,6 +150,8 @@ body {
 
   .calculator__specific {
     grid-area: "specific";
+    display: flex;
+    
   }
   .calculator__act {
     grid-area: "act";
@@ -188,7 +190,9 @@ body {
     border: 1px solid rgb(0, 0, 0);
     background-color: rgb(0, 0, 0);
   }
-  #clear {
+  #clear,
+  #percent,
+  #split_plus {
     font-size: 30px;
     font-weight: 200;
     background-color: rgb(161, 161, 161);
@@ -196,6 +200,8 @@ body {
   }
 
   #clear,
+  #percent,
+  #split_plus,
   #split,
   #mult,
   #min,
@@ -204,6 +210,12 @@ body {
     display: flex;
     text-align: center;
     justify-content: center;
+  }
+
+  #clear,
+  #percent,
+  #split_plus {
+    margin: 0px 6px 0px 1px;
   }
 }
 
@@ -240,11 +252,14 @@ body {
   }
 
   #clear,
+  #percent,
+  #split_plus,
   #split,
   #mult,
   #min,
   #plus,
-  #enter {
+  #enter
+  {
     font-size: 25px;
     font-weight: 400;
     display: flex;
