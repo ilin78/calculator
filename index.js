@@ -21,6 +21,23 @@ function numberAdd(numbers) {
     Input(arrNum.join(''));
 }
 
+
+  
+
+//______________________________________________________________
+function floatPoint() {
+    let hundlerPoint=true;
+
+
+    return function () {
+        // hundlerPoint = !hundlerPoint
+        console.log(hundlerPoint, "hundlerPoint")
+        return hundlerPoint;
+    }
+}
+//______________________________________________________________
+
+let count = floatPoint();
 // NUMBER
 class Menu {
     constructor(elem) {
@@ -39,6 +56,17 @@ class Menu {
     num_9() { numberAdd(9); }
     num_0() { numberAdd(0); }
 
+    num_point() { 
+        
+        if (count() === true) {
+            numberAdd(".")
+            count()
+            //console.log(count(), "call")
+        } else {
+            
+        }
+    }       
+        
     onClick(event) {
         let action = event.target.dataset.action;
         if (action) {
@@ -55,6 +83,8 @@ function clearNumbersArray(clearArray) {
 }
 
 function Input(results) {
+    // console.log(typeof(results))    
+
     document.getElementById('input').value = results;
 }
 
@@ -68,6 +98,7 @@ function multFunc() { Active(mult); }
 function splitFunc(){ Active(split);}
 
 function Active(act) {
+    // count()
     out = input.value + act;
     var act = act;
     clearAll();

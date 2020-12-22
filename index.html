@@ -2,15 +2,10 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="css/style_l.css" media="screen and (orientation: landscape)">
-    <link rel="stylesheet" type="text/css" href="css/style_p.css" media="screen and (orientation: portrait)">
-
-
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@498&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=false;" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link rel="stylesheet" href="style.css">
@@ -25,7 +20,7 @@
             <main class="main">
                 <div class="calculator">
                     <div class="calculator__input">
-                        <input id="input" type="number" onchange="inputFunc()"></input>
+                        <input id="input" type="text" disabled="disabled" onchange="inputFunc()"></input>
                     </div>
 
                     <div class="calculator__buttons">
@@ -52,7 +47,7 @@
                             <button data-action="num_2" value="2">2</button>
                             <button data-action="num_3" value="3">3</button>
                             <button id="zero" data-action="num_0" value="0">0</button>
-                            <button data-action="num_point" value=",">,</button>
+                            <button data-action="num_point" value=".">,</button>
                         </div>
                     </div>
                 </div>
