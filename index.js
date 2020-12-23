@@ -1,5 +1,8 @@
 "use strict"
- 
+function text(printText)
+{
+    console.log(printText)
+}
 // INPUT
 const arrNum = [];
 // List resuls
@@ -18,33 +21,36 @@ const history = document.getElementById("history");
 // Array number
 function numberAdd(numbers) {
     arrNum.push(numbers);
-    Input(arrNum.join(''));
+    Input(arrNum.join(''));    
 }
 
-
-  
-
-//______________________________________________________________
+// STATE FLOAT POINT
+let wrapped;
 function floatPoint() {
-    let hundlerPoint=true;
-
-
-    return function () {
-        // hundlerPoint = !hundlerPoint
-        console.log(hundlerPoint, "hundlerPoint")
+    let hundlerPoint=false;
+    let stateNowBool;  
+    return function statePoint() {  
+        hundlerPoint = !hundlerPoint;
+        wrapped = func.bind(hundlerPoint);
         return hundlerPoint;
+    }   
+}
+function func() { floatPoint.stateNowBool = this; }
+let count = floatPoint();
+count();
+
+const stateTrueFloat = function() {
+    if (count()!==true){
+        count();
     }
 }
-//______________________________________________________________
 
-let count = floatPoint();
 // NUMBER
 class Menu {
     constructor(elem) {
         this._elem = elem;
         elem.onclick = this.onClick.bind(this);
     }
-
     num_1() { numberAdd(1); }
     num_2() { numberAdd(2); }
     num_3() { numberAdd(3); }
@@ -54,16 +60,12 @@ class Menu {
     num_7() { numberAdd(7); }
     num_8() { numberAdd(8); }
     num_9() { numberAdd(9); }
-    num_0() { numberAdd(0); }
-
-    num_point() { 
-        
-        if (count() === true) {
-            numberAdd(".")
-            count()
-            //console.log(count(), "call")
-        } else {
-            
+    num_0() { numberAdd(0); }  
+    num_point() {
+        wrapped();
+        if (floatPoint.stateNowBool === true) {
+            numberAdd(".");
+            return count();
         }
     }       
         
@@ -98,13 +100,14 @@ function multFunc() { Active(mult); }
 function splitFunc(){ Active(split);}
 
 function Active(act) {
-    // count()
+    stateTrueFloat();
     out = input.value + act;
     var act = act;
     clearAll();
 }
 
 function enter() {
+    stateTrueFloat()
     const nextNumber = input.value;
     const result = eval(out.concat(input.value));
     clearInput();
@@ -115,6 +118,7 @@ function enter() {
 function clearAll(){
     clearNumbersArray(arrNum);
     clearInput();
+    stateTrueFloat();
 }
 
 
@@ -148,4 +152,7 @@ function historyClear() {
     history.innerHTML="";
     clearNumbersArray(expression);
 }
+
+
+
 
