@@ -25,24 +25,22 @@ function numberAdd(numbers) {
 }
 
 // STATE FLOAT POINT
-let wrapped;
+let wrapped;                                    // Хранит функцию с текущим контекстом состояния кнопки.
 function floatPoint() {
-    let hundlerPoint=false;
-    let stateNowBool;  
+    let hundlerPoint=false;                                               
+    let stateNowBool;                           // Передает состояние hundlerPoint.
     return function statePoint() {  
         hundlerPoint = !hundlerPoint;
-        wrapped = func.bind(hundlerPoint);
+        wrapped = func.bind(hundlerPoint);      // Биндим в func, чтобы передать контекст.
         return hundlerPoint;
     }   
 }
-function func() { floatPoint.stateNowBool = this; }
+function func() { floatPoint.stateNowBool = this; } 
 let count = floatPoint();
-count();
+count();                                        // Запускаем цикл, чтобы объявить состояние аргументов в floatPoint.
 
 const stateTrueFloat = function() {
-    if (count()!==true){
-        count();
-    }
+    if (count()!==true){ count(); }
 }
 
 // NUMBER
@@ -62,7 +60,7 @@ class Menu {
     num_9() { numberAdd(9); }
     num_0() { numberAdd(0); }  
     num_point() {
-        wrapped();
+        wrapped();                                  // читаем состояние кнопки и биндим в func
         if (floatPoint.stateNowBool === true) {
             numberAdd(".");
             return count();
