@@ -1,7 +1,7 @@
 "use strict"
-function text(printText)
+function text(printText, secondText)
 {
-    console.log(printText)
+    console.log(printText, secondText)
 }
 // INPUT
 const arrNum = [];
@@ -21,8 +21,37 @@ const history = document.getElementById("history");
 // Array number
 function numberAdd(numbers) {
     arrNum.push(numbers);
+    text( "Global",arrNum)
     Input(arrNum.join(''));    
 }
+
+function split_plus() {
+    text( "Start",arrNum)
+    if(arrNum[0]!=='-') {
+        
+        arrNum.unshift('-')
+        text( "-",arrNum)
+        return arrNum
+        // text("!==",  arrNum)
+        // return 
+    }
+    else if(arrNum[0]==='-'){
+        arrNum.delete[0]
+        text("===", arrNum)
+        return arrNum
+    }
+   
+    // return numberAdd(arrNum)
+    return  
+}
+
+function clearAll(){
+    clearNumbersArray(arrNum);
+    clearInput();
+    stateTrueFloat();
+}
+
+
 
 // STATE FLOAT POINT
 let wrapped;                                    // Хранит функцию с текущим контекстом состояния кнопки.
@@ -113,11 +142,6 @@ function enter() {
     story(result, nextNumber);
 }
 
-function clearAll(){
-    clearNumbersArray(arrNum);
-    clearInput();
-    stateTrueFloat();
-}
 
 
 //history
