@@ -1,10 +1,8 @@
 "use strict"
-function text(printText, secondText)
-{
-    console.log(printText, secondText)
-}
+
 // INPUT
 const arrNum = [];
+ 
 // List resuls
 const expression = [];
 // MATH
@@ -16,39 +14,32 @@ const mult = document.getElementById("mult").value;
 const split = document.getElementById("split").value;
 
 const history = document.getElementById("history");
- 
 
 // Array number
 function numberAdd(numbers) {
     arrNum.push(numbers);
-    text( "Global",arrNum)
     Input(arrNum.join(''));    
 }
 
-function split_plus() {
-    text( "Start",arrNum)
-    if(arrNum[0]!=='-') {
-        
-        arrNum.unshift('-')
-        text( "-",arrNum)
-        return arrNum
-        // text("!==",  arrNum)
-        // return 
-    }
-    else if(arrNum[0]==='-'){
-        arrNum.delete[0]
-        text("===", arrNum)
-        return arrNum
-    }
-   
-    // return numberAdd(arrNum)
-    return  
+
+//percent()
+function  percent() {
+    input.value/=100
+    return Input(input.value);
 }
 
-function clearAll(){
-    clearNumbersArray(arrNum);
-    clearInput();
-    stateTrueFloat();
+
+
+// PLUS OR MINUS
+function split_plus() {
+    if  (arrNum[0]!=='-' && ( input.value.substr(0, 1) !=='-' )) {
+        input.value = '-'+input.value;
+        arrNum.unshift('-');
+    } else {
+        input.value=input.value.substr(1);
+        arrNum.shift(arrNum[0]);
+    }   
+    return Input(input.value);
 }
 
 
@@ -106,19 +97,27 @@ class Menu {
 
 new Menu(menu);
 
+
+// CLEAR
 function clearInput() { input.value=''; }
 function clearNumbersArray(clearArray) {
     while (clearArray.length) { clearArray.pop(); }
 }
+function clearExp() { expressions="", resultExp=""; }
 
-function Input(results) {
-    // console.log(typeof(results))    
-
-    document.getElementById('input').value = results;
+// MIX CLEAR
+function clearStateAll(){
+    clearNumbersArray(arrNum);
+    clearInput();
+    stateTrueFloat();
+}
+function clearAll() {
+    clearStateAll();
+    clearExp();
 }
 
-function inputFunc() {
-    const input = document.getElementById("input");    
+function Input(results) {
+    document.getElementById('input').value = results;
 }
 
 function plusFunc() { Active(plus); }
@@ -126,54 +125,75 @@ function minFunc()  { Active(min);  }
 function multFunc() { Active(mult); }
 function splitFunc(){ Active(split);}
 
+
+// MATH
+let expressions = ""; 
+let resultExp = "";
+ 
+
+function pushExp (inputState,actState) {        
+    expressions += inputState + actState;   
+  
+    if (expressions !== '') {
+        resultExp = eval(expressions.slice(0, -1)); // Сохраняем промжуточный результат
+        console.log(expressions)
+        return resultExp;
+    }
+}
+
 function Active(act) {
     stateTrueFloat();
-    out = input.value + act;
-    var act = act;
-    clearAll();
+    const inputState = input.value;
+    const actState = act;
+    clearStateAll();
+    pushExp(inputState, actState)
+    Input(resultExp);
 }
 
 function enter() {
-    stateTrueFloat()
-    const nextNumber = input.value;
-    const result = eval(out.concat(input.value));
-    clearInput();
-    Input(result);
-    story(result, nextNumber);
+    stateTrueFloat();
+ 
+    let getResult = "=";
+    Active(getResult);
+ 
+    clearInput(); 
+    Input(resultExp);
+    expressions = "";
+    // story(result, nextNumber);  
 }
 
 
 
 //history
-const li = function () {
-    var selectorLI = document.querySelector("ul").children;
-    history.removeChild(selectorLI[0])
-}
+// const li = function () {
+//     var selectorLI = document.querySelector("ul").children;
+//     history.removeChild(selectorLI[0])
+// }
 
-function story(result, nextNumber) {
+// function story(result, nextNumber) {
       
-    const list = document.createElement("li");
+//     const list = document.createElement("li");
 
-    nextNumber = String(nextNumber);
-    out = String(out);
-    result = String(result);
+//     nextNumber = String(nextNumber);
+//     out = String(out);
+//     result = String(result);
 
-    expression.push(out+nextNumber+'='+result);
+//     expression.push(out+nextNumber+'='+result);
 
-    for (let i=0; i<expression.length; i++){
-        list.textContent =expression[i];
-        history.appendChild(list);
-    }
+//     for (let i=0; i<expression.length; i++){
+//         list.textContent =expression[i];
+//         history.appendChild(list);
+//     }
     
-    if (expression.length>15){
-        li()    
-    }
-}
+//     if (expression.length>15){
+//         li()    
+//     }
+// }
 
-function historyClear() {
-    history.innerHTML="";
-    clearNumbersArray(expression);
-}
+// function historyClear() {
+//     history.innerHTML="";
+//     clearNumbersArray(expression);
+// }
 
 
 
