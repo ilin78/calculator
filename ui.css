@@ -3,8 +3,10 @@
 
 body,
 ul {
+  margin: 0;
   list-style: none;
 }
+
 
 /* UI */
 button {

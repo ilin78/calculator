@@ -21,14 +21,11 @@ function numberAdd(numbers) {
     Input(arrNum.join(''));    
 }
 
-
 //percent()
 function  percent() {
     input.value/=100
     return Input(input.value);
 }
-
-
 
 // PLUS OR MINUS
 function split_plus() {
@@ -41,8 +38,6 @@ function split_plus() {
     }   
     return Input(input.value);
 }
-
-
 
 // STATE FLOAT POINT
 let wrapped;                                    // Хранит функцию с текущим контекстом состояния кнопки.
@@ -97,7 +92,6 @@ class Menu {
 
 new Menu(menu);
 
-
 // CLEAR
 function clearInput() { input.value=''; }
 function clearNumbersArray(clearArray) {
@@ -125,11 +119,9 @@ function minFunc()  { Active(min);  }
 function multFunc() { Active(mult); }
 function splitFunc(){ Active(split);}
 
-
 // MATH
 let expressions = ""; 
 let resultExp = "";
- 
 
 function pushExp (inputState,actState) {        
     expressions += inputState + actState;   
@@ -145,55 +137,51 @@ function Active(act) {
     stateTrueFloat();
     const inputState = input.value;
     const actState = act;
+    pushExp(inputState, actState);
     clearStateAll();
-    pushExp(inputState, actState)
     Input(resultExp);
 }
 
 function enter() {
     stateTrueFloat();
- 
-    let getResult = "=";
-    Active(getResult);
- 
+    Active(' ');
     clearInput(); 
+    story(expressions, resultExp);
     Input(resultExp);
-    expressions = "";
-    // story(result, nextNumber);  
+    expressions = '';
+     
 }
 
 
 
-//history
-// const li = function () {
-//     var selectorLI = document.querySelector("ul").children;
-//     history.removeChild(selectorLI[0])
-// }
 
-// function story(result, nextNumber) {
+// history
+const li = function () {
+    var selectorLI = document.querySelector("ul").children;
+    history.removeChild(selectorLI[0])
+}
+
+function story(expressions, resultExp) {
       
-//     const list = document.createElement("li");
+    const list = document.createElement("li");
+ 
 
-//     nextNumber = String(nextNumber);
-//     out = String(out);
-//     result = String(result);
+    expression.push(expressions+'='+resultExp);
 
-//     expression.push(out+nextNumber+'='+result);
-
-//     for (let i=0; i<expression.length; i++){
-//         list.textContent =expression[i];
-//         history.appendChild(list);
-//     }
+    for (let i=0; i<expression.length; i++){
+        list.textContent =expression[i];
+        history.appendChild(list);
+    }
     
-//     if (expression.length>15){
-//         li()    
-//     }
-// }
+    if (expression.length>15){
+        li()    
+    }
+}
 
-// function historyClear() {
-//     history.innerHTML="";
-//     clearNumbersArray(expression);
-// }
+function historyClear() {
+    history.innerHTML="";
+    clearNumbersArray(expression);
+}
 
 
 
