@@ -10,31 +10,76 @@ body {
   margin: 0px;
   height: 100vh;
   overflow: hidden;
+  background-color: #f5f4f4;
 }
-
+ 
 .main {
   display: grid;
-  grid-template-rows: [start] 100vh [row-end];
+  grid-template-rows: [start] 100vh [row-end];  
   grid-template-columns: [start] 4fr [col2]  minmax( 250px, 1fr) [col-end];
+}
+
+.calculator {
+  display: grid;
+  grid-template-rows: [start] 1fr [row1]  minmax(  200px, 3fr ) [row-end];
+  grid-template-columns: [start] 1fr [col-end];
+
  
 }
 
 .calculator__input {
-  color: #000;
+  
 }
+
+
+/* UI input */
+#input {
+  width: 100%;
+  height: 100%;
+  font-size: 60px;
+  color:black;
+  text-align: right;
+  border: none;
+  background-color: #f5f4f4;
+  
+  /* background-color: #000; */
+}
+
+.calculator__buttons {
+ 
+  display: grid;
+  grid-template-rows: [start] 1fr [row1] 1fr [row2] 1fr [row3] 1fr  1fr [row4]  1fr [row5]  1fr [row6-end];
+  grid-template-columns: [start] 1fr [col1] 1fr [col2] 1fr [col3] 1fr [col4-end];
+}
+
+button {
+  color: white;
+  /* background-color: #ccc; */
+  border: none;
+  width: 100%;
+ 
+}
+
+/* POSITION BUTTON
+  #clear,
+  #percent,
+  #split_plus,
+  #split,
+  #mult,
+  #min,
+  #plus,
+  #enter {
+*/
+.item_s2 { 
+  color: red;
+  grid-row-start: row1;
+  grid-column-start: col3;
+}
+    
 
 nav {
 }
 
-.calculator {
- 
-/* 
-  background-color: #eee;
-  width: 376px ; 
-  height:710px;
-  border: 2px solid rgba(0, 0, 0, 0.199);
-   border-radius: 5px; */
-}
 
 .calculator__specific {
 }
@@ -48,55 +93,35 @@ nav {
 .history {
   height: 100vh;
   display: block;
-  border: 0.5px dashed red;
+ 
 }
 
 .history__list {
+  height: calc(100vh - 50px);
+  scroll-snap-type: x proximity;
+  overflow-y: scroll;
+  text-align: right;
+}
  
-  width: 100%;
-  border: 3px solid #888;
-}
-
 .history__clear {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
 }
-/* WEB DESCTOP */
-@media screen and (max-width: 992px) {
-  .wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0px;
-  }
-  .history {
-    width: 450px;
-  }
-
-  body {
-    background-color: rgb(208, 255, 100);
-  }
-}
-/* WEB DESCTOP */
-@media screen and (max-width: 767px) {
-  .wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0px;
-  }
-  .history {
-    width: 450px;
-  }
-
-  body {
-    background-color: rgb(255, 100, 100);
-  }
+  /* UI */
+.button__clear {
+  background: center / contain no-repeat url("./img/del_list.png");
+  background-size: 20px;
+  background-color: #f5f4f4;
+  width: 30px;
+  height: 30px;
+  border: none;
+  opacity: 0.8;
 }
 
-input:disabled{  
-  color:#fff;
-  opacity: 1;
-  -webkit-text-fill-color: #fff;
-}
+
+
+
 /* IPhone XR Rotate 90*/
 @media only screen and (max-width: 992px) and (max-height: 500px) {
   .history {
@@ -122,7 +147,6 @@ input:disabled{
   .history {
     display: none;
   }
-
   body {
     background-color: rgb(51, 51, 51);
   }
@@ -132,7 +156,6 @@ input:disabled{
   body {
     background-color: rgb(0, 0, 0);
   }
-
   .main {
     display: flex;
     justify-content: center;
@@ -161,6 +184,7 @@ input:disabled{
   }
 
   .calculator__buttons {
+    border: none;
     grid-area: "buttons";
     display: grid;
     grid-template-columns: 279px 1fr;
@@ -173,7 +197,6 @@ input:disabled{
   .calculator__specific {
     grid-area: "specific";
     display: flex;
-    
   }
   .calculator__act {
     grid-area: "act";
@@ -185,7 +208,8 @@ input:disabled{
     grid-area: "numeral";
   }
 
-  /* UI */
+
+
   button {
     margin: 1px 2px 6px 0;
     align-items: center;
@@ -198,7 +222,7 @@ input:disabled{
     color: #fff;
     /*  box-shadow: +Слева +Снизу Рассеивание Вокруг*/
   }
-  input {
+  #input {
     margin: 20px -10px;
     height: 70px;
     text-align: right;
@@ -220,7 +244,7 @@ input:disabled{
     background-color: rgb(161, 161, 161);
     color: #000;
   }
-
+  
   #clear,
   #percent,
   #split_plus,
@@ -296,7 +320,7 @@ input:disabled{
     padding-left: 21px;
   }
 
-  input {
+  #input {
     margin: 20px 0;
     height: 70px;
     text-align: right;

@@ -1,6 +1,5 @@
 
 
-
 body,
 ul {
   margin: 0;
@@ -49,3 +48,38 @@ button:active {
   text-align: left;
   padding-left: 32px;
 }
+
+
+/* WEB DESCTOP 992px*/
+/*
+@media screen and (max-width: 992px) {
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+  }
+ 
+
+  body {
+    background-color: rgb(208, 255, 100);
+  }
+}
+*/
+/* WEB DESCTOP 767px*/
+/*
+@media screen and (max-width: 767px) {
+ 
+ 
+
+  body {
+    background-color: rgb(255, 100, 100);
+  }
+}
+
+input:disabled{  
+  color:#fff;
+  opacity: 1;
+  -webkit-text-fill-color: #fff;
+}
+*/

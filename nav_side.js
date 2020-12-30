@@ -27,4 +27,4 @@ const navSlide = () => {
 
 
 
-navSlide()
+navSlide();

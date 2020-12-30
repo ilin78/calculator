@@ -173,7 +173,7 @@ function story(expressions, resultExp) {
         history.appendChild(list);
     }
     
-    if (expression.length>15){
+    if (expression.length>150){
         li()    
     }
 }
